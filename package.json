@@ -1,0 +1,11 @@
+{
+  "name": "darzana-editor",
+  "version": "0.1.0",
+  "description": "",
+  "devDependencies": {
+    "ws": "^1.1.1"
+  },
+  "dependencies": {
+    "node-blockly": "^1.0.24"
+  }
+}
