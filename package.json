@@ -2,10 +2,68 @@
   "name": "darzana-editor",
   "version": "0.1.0",
   "description": "",
-  "devDependencies": {
-    "ws": "^1.1.1"
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack --config ./webpack.config.dev.js",
+    "start": "electron dist",
+    "start-main-dev": "electron ./app/main.dev",
+    "start:renderer:dev": "node ./app/main.dev"
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "@babel/preset-env"
+        ],
+        "plugins": [
+          "react-hot-loader/babel",
+          "@babel/plugin-transform-react-jsx",
+          "@babel/plugin-transform-async-to-generator",
+          "@babel/plugin-syntax-dynamic-import",
+          "@babel/plugin-syntax-object-rest-spread",
+          "@babel/plugin-proposal-class-properties"
+        ]
+      }
+    }
   },
   "dependencies": {
-    "node-blockly": "^1.0.24"
+    "node-blockly": "^1.0.24",
+    "react": "^16.3.0-rc.0",
+    "react-dnd": "^2.5.4",
+    "react-dnd-html5-backend": "^2.5.4",
+    "react-dom": "^16.2.0",
+    "react-final-form": "^3.1.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6"
+  },
+  "devDependencies": {
+    "electron": "^1.8.4",
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.42",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.42",
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0-beta.42",
+    "@babel/plugin-transform-async-to-generator": "^7.0.0-beta.42",
+    "@babel/plugin-transform-react-jsx": "^7.0.0-beta.42",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/runtime": "^7.0.0-beta.42",
+    "babel-loader": "8.0.0-beta.2",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.18.2",
+    "jest": "^22.4.3",
+    "license-webpack-plugin": "^1.2.3",
+    "react-hot-loader": "^4.0.0",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.0",
+    "webpack-hot-middleware": "^2.21.2",
+    "webpack-merge": "^4.1.2"
   }
 }
